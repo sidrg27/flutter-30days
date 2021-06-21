@@ -1,4 +1,5 @@
-import 'package:first/homepage.dart';
+import 'package:first/pages/homepage.dart';
+import 'package:first/pages/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return MaterialApp(
+      title: "day 2",
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primaryColor: Colors.deepPurple),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => HomePage(),
+        "/login": (context) => LoginPage()
+      },
+    );
   }
 }
