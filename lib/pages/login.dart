@@ -1,3 +1,4 @@
+import 'package:first/utils/routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,56 +7,58 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Column(
-        children: [
-          Container(
-              height: 300,
-              child: Image.asset(
-                "assets/images/apple.jpg",
-              )),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "apple is red",
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+      color: Colors.orange,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              "assets/images/apple.jpg",
+              height: 100,
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-            child: Column(
-              children: [
-                TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Enter your username",
-                    labelText: "Username",
-                  ),
-                ),
-                TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Enter your Password",
-                    labelText: "Password",
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    print('object');
-                  },
-                  child: Text("Login"),
-                )
-              ],
+            SizedBox(
+              height: 20,
             ),
-          )
-        ],
+            Text(
+              "apple is red",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      hintText: "Enter your username",
+                      labelText: "Username",
+                    ),
+                  ),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      hintText: "Enter your Password",
+                      labelText: "Password",
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, MyRoutes.homeroute);
+                    },
+                    child: Text("Login"),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
